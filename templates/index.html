@@ -16,6 +16,7 @@
             <p>
                 {{order.customer_name}}: <b>{{order.game_title + ", quantity: " + order.quantity + ", age rating: " + order.age_rating}}</b>
             </p>
+            <a href="{{ url_for('single_order', id=order.id) }}">View Order Details</a>
         </div>
         {% endfor %}
         </main>

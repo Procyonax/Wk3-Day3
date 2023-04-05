@@ -4,5 +4,8 @@ from models.order_list import *
 
 @app.route('/')
 def index():
-    return render_template('index.html', orders=orders)
+    return render_template('index.html', title='Home', orders=orders)
 
+@app.route('/<int:id>')
+def single_order(id):
+    return render_template('show.html', title='Single Order', order=orders[id-1])
